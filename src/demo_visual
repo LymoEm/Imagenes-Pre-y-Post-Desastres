@@ -1,0 +1,162 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage.metrics import structural_similarity as ssim
+
+def distancia_euclidiana(v1, v2):
+    return np.sqrt(np.sum((v1 - v2)**2))
+
+
+# matching manual
+def matching_fuerza_bruta(des1, des2):
+
+    matches = []
+
+    for i in range(len(des1)):
+        mejor_dist = float('inf')
+        mejor_j = -1
+
+        for j in range(len(des2)):
+            dist = distancia_euclidiana(des1[i], des2[j])
+
+            if dist < mejor_dist:
+                mejor_dist = dist
+                mejor_j = j
+
+        matches.append(cv2.DMatch(_queryIdx=i, _trainIdx=mejor_j, _distance=mejor_dist))
+
+    matches = sorted(matches, key=lambda x: x.distance)
+    return matches
+
+
+# preprocesamiento
+def preprocesar(img):
+
+    img = cv2.resize(img, (256,256))
+    gris = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gris = cv2.GaussianBlur(gris, (5,5), 0)
+    gris = cv2.equalizeHist(gris)
+
+    return gris
+
+
+# akaze
+def obtener_akaze(gris):
+
+    akaze = cv2.AKAZE_create()
+    kp, des = akaze.detectAndCompute(gris, None)
+
+    return kp, des
+
+
+# ransac
+def calcular_homografia(kp1, kp2, matches):
+
+    if len(matches) < 4:
+        return None
+
+    pts1 = np.float32([kp1[m.queryIdx].pt for m in matches]).reshape(-1,1,2)
+    pts2 = np.float32([kp2[m.trainIdx].pt for m in matches]).reshape(-1,1,2)
+
+    H, _ = cv2.findHomography(pts1, pts2, cv2.RANSAC, 5.0)
+
+    return H
+
+
+def alinear(img1, img2, H):
+
+    if H is None:
+        return img1
+
+    h, w = img2.shape[:2]
+    return cv2.warpPerspective(img1, H, (w,h))
+
+
+# mapa de daño
+def mapa_dano(img1, img2):
+
+    # diferencia intensidad
+    diff = cv2.absdiff(img1, img2)
+
+    # ssim
+    score, mapa = ssim(img1, img2, full=True)
+    mapa = (mapa * 255).astype("uint8")
+
+    # bordes
+    e1 = cv2.Canny(img1, 100, 200)
+    e2 = cv2.Canny(img2, 100, 200)
+    diff_bordes = cv2.absdiff(e1, e2)
+
+    # textura
+    t1 = cv2.Laplacian(img1, cv2.CV_64F)
+    t2 = cv2.Laplacian(img2, cv2.CV_64F)
+    diff_textura = cv2.absdiff(t1, t2)
+    diff_textura = np.uint8(np.absolute(diff_textura))
+
+    return diff, mapa, diff_bordes, diff_textura, score
+
+
+def visualizar(ruta1, ruta2):
+
+    img1 = cv2.imread(ruta1)
+    img2 = cv2.imread(ruta2)
+
+    g1 = preprocesar(img1)
+    g2 = preprocesar(img2)
+
+    kp1, des1 = obtener_akaze(g1)
+    kp2, des2 = obtener_akaze(g2)
+
+    if des1 is None or des2 is None:
+        print("no hay descriptores")
+        return
+
+    matches = matching_fuerza_bruta(des1, des2)
+    matches = matches[:50]
+
+    H = calcular_homografia(kp1, kp2, matches)
+
+    alineada = alinear(g1, g2, H)
+
+    diff, mapa, diff_bordes, diff_textura, score = mapa_dano(alineada, g2)
+
+    img_matches = cv2.drawMatches(img1, kp1, img2, kp2, matches, None)
+
+    plt.figure(figsize=(12,8))
+
+    plt.subplot(2,3,1)
+    plt.title("pre")
+    plt.imshow(g1, cmap="gray")
+
+    plt.subplot(2,3,2)
+    plt.title("post")
+    plt.imshow(g2, cmap="gray")
+
+    plt.subplot(2,3,3)
+    plt.title("matches")
+    plt.imshow(cv2.cvtColor(img_matches, cv2.COLOR_BGR2RGB))
+
+    plt.subplot(2,3,4)
+    plt.title("diff intensidad")
+    plt.imshow(diff, cmap="gray")
+
+    plt.subplot(2,3,5)
+    plt.title("ssim")
+    plt.imshow(mapa, cmap="gray")
+
+    plt.subplot(2,3,6)
+    plt.title("bordes")
+    plt.imshow(diff_bordes, cmap="gray")
+
+    plt.suptitle(f"ssim: {score:.3f}")
+
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+
+    visualizar(
+        "data/no_damage/img1.jpg",
+        "data/damage/img2.jpg"
+    )
