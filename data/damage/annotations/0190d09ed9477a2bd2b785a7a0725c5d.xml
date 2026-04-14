@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<annotation>
+  <folder>damage/images</folder>
+  <filename>damage/images/0190d09ed9477a2bd2b785a7a0725c5d.jpg</filename>
+  <damagePresence>damage</damagePresence>
+  <structureType>GL-AEDES</structureType>
+  <size>
+    <width>4608</width>
+    <height>3456</height>
+    <depth>3</depth>
+  </size>
+  <object element="Infill" type="polygon">
+    <name damage="Partial/full collapse">Other damage/mechanism</name>
+    <bndbox>
+      <xmin>2290</xmin>
+      <ymin>631</ymin>
+      <xmax>3655</xmax>
+      <ymax>2195</ymax>
+    </bndbox>
+    <polygon>
+      <x1>2290</x1>
+      <y1>631</y1>
+      <x2>2451</x2>
+      <y2>1256</y2>
+      <x3>3655</x3>
+      <y3>2195</y3>
+      <x4>3356</x4>
+      <y4>1223</y4>
+    </polygon>
+  </object>
+  <object element="Infill" type="polygon">
+    <name damage="Debris">Debris</name>
+    <bndbox>
+      <xmin>3235</xmin>
+      <ymin>2448</ymin>
+      <xmax>4598</xmax>
+      <ymax>3447</ymax>
+    </bndbox>
+    <polygon>
+      <x1>3643</x1>
+      <y1>2572</y1>
+      <x2>3966</x2>
+      <y2>2448</y2>
+      <x3>4598</x3>
+      <y3>2562</y3>
+      <x4>4587</x4>
+      <y4>3447</y4>
+      <x5>3447</x5>
+      <y5>3447</y5>
+      <x6>3235</x6>
+      <y6>3046</y6>
+      <x7>3235</x7>
+      <y7>2932</y7>
+      <x8>3338</x8>
+      <y8>2812</y8>
+    </polygon>
+  </object>
+  <object element="RC column" type="rect">
+    <name damage="Detachment crack">Crack</name>
+    <bndbox>
+      <xmin>1339</xmin>
+      <ymin>525</ymin>
+      <xmax>1453</xmax>
+      <ymax>802</ymax>
+    </bndbox>
+  </object>
+  <object element="RC column" type="polygon">
+    <name damage="Concrete spalling">Spalling</name>
+    <bndbox>
+      <xmin>771</xmin>
+      <ymin>1830</ymin>
+      <xmax>1181</xmax>
+      <ymax>2644</ymax>
+    </bndbox>
+    <polygon>
+      <x1>1181</x1>
+      <y1>1873</y1>
+      <x2>1070</x2>
+      <y2>2622</y2>
+      <x3>771</x3>
+      <y3>2644</y3>
+      <x4>913</x4>
+      <y4>1830</y4>
+    </polygon>
+  </object>
+</annotation>

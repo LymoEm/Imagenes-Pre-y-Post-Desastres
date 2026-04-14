@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<annotation>
+  <folder>damage/images</folder>
+  <filename>damage/images/018fcad0bb1f0c40fa34ea77971f40ef.jpg</filename>
+  <damagePresence>damage</damagePresence>
+  <structureType>AE_BUILDING</structureType>
+  <size>
+    <width>4288</width>
+    <height>2848</height>
+    <depth>3</depth>
+  </size>
+  <object element="Masonry wall" type="polygon">
+    <name damage="Masonry spalling">Spalling</name>
+    <bndbox>
+      <xmin>1333</xmin>
+      <ymin>1257</ymin>
+      <xmax>1430</xmax>
+      <ymax>1360</ymax>
+    </bndbox>
+    <polygon>
+      <x1>1342</x1>
+      <y1>1357</y1>
+      <x2>1393</x2>
+      <y2>1360</y2>
+      <x3>1430</x3>
+      <y3>1272</y3>
+      <x4>1379</x4>
+      <y4>1257</y4>
+      <x5>1333</x5>
+      <y5>1344</y5>
+    </polygon>
+  </object>
+  <object element="Masonry wall" type="polygon">
+    <name damage="Masonry spalling">Spalling</name>
+    <bndbox>
+      <xmin>1276</xmin>
+      <ymin>1804</ymin>
+      <xmax>1384</xmax>
+      <ymax>1976</ymax>
+    </bndbox>
+    <polygon>
+      <x1>1276</x1>
+      <y1>1948</y1>
+      <x2>1342</x2>
+      <y2>1804</y2>
+      <x3>1384</x3>
+      <y3>1826</y3>
+      <x4>1319</x4>
+      <y4>1976</y4>
+    </polygon>
+  </object>
+  <object element="Masonry wall" type="polygon">
+    <name damage="Masonry spalling">Spalling</name>
+    <bndbox>
+      <xmin>1304</xmin>
+      <ymin>1440</ymin>
+      <xmax>1361</xmax>
+      <ymax>1507</ymax>
+    </bndbox>
+    <polygon>
+      <x1>1316</x1>
+      <y1>1440</y1>
+      <x2>1359</x2>
+      <y2>1460</y2>
+      <x3>1361</x3>
+      <y3>1488</y3>
+      <x4>1305</x4>
+      <y4>1507</y4>
+      <x5>1304</x5>
+      <y5>1448</y5>
+    </polygon>
+  </object>
+</annotation>

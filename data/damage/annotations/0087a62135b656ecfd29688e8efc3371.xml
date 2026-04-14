@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<annotation>
+  <folder>damage/images</folder>
+  <filename>damage/images/0087a62135b656ecfd29688e8efc3371.jpg</filename>
+  <damagePresence>damage</damagePresence>
+  <structureType>BRIDGE</structureType>
+  <size>
+    <width>4608</width>
+    <height>3456</height>
+    <depth>3</depth>
+  </size>
+  <object element="PSC beam" type="rect">
+    <name damage="Concrete spalling">Spalling</name>
+    <bndbox>
+      <xmin>58</xmin>
+      <ymin>1437</ymin>
+      <xmax>528</xmax>
+      <ymax>1662</ymax>
+    </bndbox>
+  </object>
+  <object element="PSC beam" type="rect">
+    <name damage="Reinforcement oxidized/corroded">Corrosion/Exposed rebar</name>
+    <bndbox>
+      <xmin>77</xmin>
+      <ymin>1443</ymin>
+      <xmax>465</xmax>
+      <ymax>1639</ymax>
+    </bndbox>
+  </object>
+  <object element="RC Deck/slab" type="rect">
+    <name damage="Concrete spalling">Spalling</name>
+    <bndbox>
+      <xmin>1229</xmin>
+      <ymin>1522</ymin>
+      <xmax>2151</xmax>
+      <ymax>1799</ymax>
+    </bndbox>
+  </object>
+  <object element="RC Deck/slab" type="rect">
+    <name damage="Reinforcement oxidized/corroded">Corrosion/Exposed rebar</name>
+    <bndbox>
+      <xmin>1263</xmin>
+      <ymin>1567</ymin>
+      <xmax>1464</xmax>
+      <ymax>1752</ymax>
+    </bndbox>
+  </object>
+</annotation>

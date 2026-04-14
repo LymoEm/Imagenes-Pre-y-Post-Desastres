@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<annotation>
+  <folder>damage/images</folder>
+  <filename>damage/images/00e75171c7354a1db54148bab19863da.jpg</filename>
+  <damagePresence>damage</damagePresence>
+  <structureType>GL-AEDES</structureType>
+  <size>
+    <width>4608</width>
+    <height>3456</height>
+    <depth>3</depth>
+  </size>
+  <object element="Masonry wall" type="polygon">
+    <name damage="Masonry spalling">Spalling</name>
+    <bndbox>
+      <xmin>3390</xmin>
+      <ymin>2447</ymin>
+      <xmax>3529</xmax>
+      <ymax>2535</ymax>
+    </bndbox>
+    <polygon>
+      <x1>3529</x1>
+      <y1>2517</y1>
+      <x2>3524</x2>
+      <y2>2475</y2>
+      <x3>3497</x3>
+      <y3>2488</y3>
+      <x4>3468</x4>
+      <y4>2484</y4>
+      <x5>3457</x5>
+      <y5>2485</y5>
+      <x6>3403</x6>
+      <y6>2447</y6>
+      <x7>3393</x7>
+      <y7>2457</y7>
+      <x8>3390</x8>
+      <y8>2497</y8>
+      <x9>3397</x9>
+      <y9>2535</y9>
+      <x10>3441</x10>
+      <y10>2534</y10>
+      <x11>3467</x11>
+      <y11>2520</y11>
+      <x12>3521</x12>
+      <y12>2521</y12>
+    </polygon>
+  </object>
+</annotation>

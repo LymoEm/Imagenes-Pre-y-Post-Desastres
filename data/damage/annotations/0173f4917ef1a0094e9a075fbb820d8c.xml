@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<annotation>
+  <folder>damage/images</folder>
+  <filename>damage/images/0173f4917ef1a0094e9a075fbb820d8c.jpg</filename>
+  <damagePresence>damage</damagePresence>
+  <structureType>AE_BUILDING</structureType>
+  <size>
+    <width>2848</width>
+    <height>4288</height>
+    <depth>3</depth>
+  </size>
+  <object element="Masonry wall" type="polygon">
+    <name damage="Flexural/rocking crack">Crack</name>
+    <bndbox>
+      <xmin>675</xmin>
+      <ymin>44</ymin>
+      <xmax>1956</xmax>
+      <ymax>2845</ymax>
+    </bndbox>
+    <polygon>
+      <x1>1160</x1>
+      <y1>2832</y1>
+      <x2>1468</x2>
+      <y2>2845</y2>
+      <x3>1778</x3>
+      <y3>2158</y3>
+      <x4>1747</x4>
+      <y4>687</y4>
+      <x5>1956</x5>
+      <y5>90</y5>
+      <x6>1871</x6>
+      <y6>44</y6>
+      <x7>1688</x7>
+      <y7>571</y7>
+      <x8>1551</x8>
+      <y8>1129</y8>
+      <x9>1496</x9>
+      <y9>1739</y9>
+      <x10>1489</x10>
+      <y10>2127</y10>
+      <x11>1365</x11>
+      <y11>2298</y11>
+      <x12>675</x12>
+      <y12>2783</y12>
+    </polygon>
+  </object>
+  <object element="Masonry wall" type="polygon">
+    <name damage="Flexural/rocking crack">Crack</name>
+    <bndbox>
+      <xmin>140</xmin>
+      <ymin>339</ymin>
+      <xmax>1106</xmax>
+      <ymax>1062</ymax>
+    </bndbox>
+    <polygon>
+      <x1>140</x1>
+      <y1>1054</y1>
+      <x2>225</x2>
+      <y2>1062</y2>
+      <x3>346</x3>
+      <y3>478</y3>
+      <x4>1098</x4>
+      <y4>571</y4>
+      <x5>1106</x5>
+      <y5>483</y5>
+      <x6>292</x6>
+      <y6>339</y6>
+    </polygon>
+  </object>
+</annotation>
