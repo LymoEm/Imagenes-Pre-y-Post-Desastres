@@ -1,5 +1,6 @@
 # dataset
-data/*
+data/train/
+data/processed/
 *.tar
 *.zip
 *.gz
@@ -8,3 +9,6 @@ data/*
 runs/
 checkpoints/
 logs/
+
+venv/
+__pycache__/
